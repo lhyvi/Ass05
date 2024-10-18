@@ -20,11 +20,11 @@ if (!isset($_SESSION['random_number']) or !isset($_SESSION['guesses'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Higher Lower</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/higherlower.css">
 </head>
 <body>
-	<h1> Higher Lower </h1>
-	
+	<h1><br><span id="green">HIGHER</span><br><span id="white">OR</span><br><span id="red">LOWER</span></h1>
+	<div id="box">
 	<?php
 	$win = false;
 	
@@ -53,7 +53,7 @@ if (!isset($_SESSION['random_number']) or !isset($_SESSION['guesses'])) {
 	<h2>CONGRATS <?php echo $_SESSION['uname'];?>
 	<h2>FINAL AMOUNT OF GUESSES: <?php echo $final_guesses;?></h2>
 	<form action="higherlower.php">
-    <input type="submit" value="play-again?" />
+    <input type="submit" value="Play again?" />
 	</form>
 	<?php
 	} else {
@@ -69,6 +69,7 @@ if (!isset($_SESSION['random_number']) or !isset($_SESSION['guesses'])) {
 	?>
 	
 	<form action="logout.php">
-    <input type="submit" value="log-out" />
+    <input type="submit" value="Logout" />
 	</form>
+	</div>
 </body>
