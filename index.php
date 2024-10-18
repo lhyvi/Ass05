@@ -1,3 +1,10 @@
+<?php
+if (isset($_SESSION['uname'])) {
+	header('Location: higherlower.php');
+	exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
