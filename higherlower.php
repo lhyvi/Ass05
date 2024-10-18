@@ -12,8 +12,8 @@ if (!isset($_SESSION['random_number']) or !isset($_SESSION['guesses'])) {
 	$_SESSION['guesses'] = 0;
 }
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
