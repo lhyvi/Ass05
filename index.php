@@ -4,6 +4,7 @@ if (isset($_SESSION['uname'])) {
 	exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,28 +12,26 @@ if (isset($_SESSION['uname'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/CSS/index.css">
-
 </head>
 <body>
     <div class="container">
-        <form action="login.php" method="post" class="indexform">
-        <div class="title-container">
-            <h1>The <br> <span class="green">HIGHER</span><br> <span class="red">LOWER<br></span> Game</h1>
+        <div class="left-panel">
+            <h1>The <br><span class="green">HIGHER</span><br><span class="red">LOWER</span><br>Game</h1>
+            <p>Welcome to the Higher or Lower Game! Try your luck and see if you can guess right.</p>
         </div>
-        <div class="wrapper">
+        <div class="right-panel">
             <h2>User Login</h2>
-            <label>User Name</label> 
-            <input type="text" name="uname" placeholder="User Name">
-            <label>Password</label>
-            <input type="password" name="pass" placeholder="Password">
-            <button type="submit">Login</button>
+            <form action="login.php" method="post" class="indexform">
+                <input type="text" name="uname" placeholder="User Name" required>
+                <input type="password" name="pass" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <?php
+                    if (isset($_GET['error'])) {
+                        echo '<p class="error">' . $_GET['error'] . '</p>';
+                    }
+                ?>
+            </form>
         </div>
-			<?php
-                if (isset($_GET['error'])) {
-                    echo '<p class="error">' . $_GET['error'] . '</p>';
-                }
-            ?>
-        </form>
-</div>
+    </div>
 </body>
 </html>
